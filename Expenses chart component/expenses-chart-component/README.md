@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses%20chart%20component/expenses-chart-component)
-- Live Site URL: [Add live site URL here](https://leafy-pastelito-3a7b1d.netlify.app/)
+- Solution URL: [github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses chart component/expenses-chart-component](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses%20chart%20component/expenses-chart-component)
+- Live Site URL: [leafy-pastelito-3a7b1d.netlify.app/](https://leafy-pastelito-3a7b1d.netlify.app/)
 
 ## My process
 
@@ -54,7 +54,7 @@ Users should be able to:
 
 ### Useful resources
 
-- [Example resource 1](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This helped me revise flexbox display.
+- [css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - This helped me revise flexbox display.
 
 ## Author
 
