@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses%20chart%20component/expenses-chart-component)
+- Live Site URL: [Add live site URL here](https://leafy-pastelito-3a7b1d.netlify.app/)
 
 ## My process
 
