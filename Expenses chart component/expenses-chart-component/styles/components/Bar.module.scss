@@ -1,0 +1,56 @@
+@use '../util/' as *;
+
+.bar_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    @include breakpoint('large'){
+        height: 70%;
+    }
+}
+
+.content{
+   
+}
+
+.amount{
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    padding: rem(5);
+    width: 160%;
+    text-align: center;
+    background-color: var(--dark-brown);
+    color: var(--cream);
+    border-radius: rem(5);
+
+    top: rem(-40);
+    left: -30%;
+    transition: all .3s ease-in-out;
+}
+
+.bar{
+    position: relative;
+    margin: rem(10) 0;
+    height: 100%;
+    width: rem(38);
+    
+    border-radius: rem(5);
+
+    @include breakpoint('large'){
+        width: rem(45);
+    }
+
+    &:hover{
+        .amount{
+            opacity: 1;
+        }
+    }
+}
+
+.day{
+    text-align: center;
+    color: var(--medium-brown);
+}

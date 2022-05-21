@@ -1,0 +1,98 @@
+@use '../util/' as *;
+
+.container{
+    width: rem(355);
+    @include breakpoint('large'){
+        width: rem(450);
+    }
+    p{
+        font-weight: 400;
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(20) rem(20);
+    background-color: var(--soft-red);
+    border-radius: rem(10);
+    color: var(--very-pale-orange);
+    margin-bottom: rem(15);
+
+    .balance{
+        display: flex;
+        flex-direction: column;
+        gap: rem(7);
+
+        p{
+            color: var(--cream);
+        }
+
+        h2{
+        }
+
+    }
+
+    img{
+        
+    }
+}
+
+.content{
+    padding: rem(20) rem(20);
+    background-color: var(--very-pale-orange);
+    border-radius: rem(10);
+
+    .chart_container{
+        h2{
+            color: var(--dark-brown);
+        }
+        .bars{
+            display: flex;
+            justify-content: center;
+            gap: rem(10);
+            height: rem(200);
+            margin-bottom: rem(90);
+            margin-top: rem(40);
+
+            @include breakpoint('large'){
+                margin-bottom: rem(40);
+            }
+        }
+    }
+
+    .bottom{
+        border-top: solid var(--cream) rem(2);
+        padding-top: rem(25);
+        margin-top: rem(-20);
+
+        &>p{
+            color: var(--medium-brown);
+            margin-bottom: rem(5);
+        }
+
+        .month_total{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h1{
+                color: var(--dark-brown);
+            }
+
+            &>div{
+                text-align: right;
+                .percentage{
+                    color: var(--dark-brown);
+                    font-weight: 700;
+                }
+                .text{
+                    color: var(--medium-brown);
+                }
+            }
+
+        }
+    }
+
+}

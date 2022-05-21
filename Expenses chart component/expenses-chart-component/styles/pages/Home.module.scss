@@ -1,0 +1,15 @@
+@use '../util/' as *;
+
+.main{
+    margin-top: rem(40);
+    height: rem(600);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    margin-top: rem(100);
+    margin-bottom: rem(50);
+    text-align: center;
+}
