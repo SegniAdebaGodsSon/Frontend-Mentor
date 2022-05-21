@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses chart component/expenses-chart-component](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Expenses%20chart%20component/expenses-chart-component)
-- Live Site URL: [leafy-pastelito-3a7b1d.netlify.app/](https://leafy-pastelito-3a7b1d.netlify.app/)
+- Live Site URL: [nimble-cassata-a4ffac.netlify.app](https://nimble-cassata-a4ffac.netlify.app)
 
 ## My process
 
