@@ -38,6 +38,7 @@
     width: rem(38);
     
     border-radius: rem(5);
+    transition: all .3s ease-in-out;
 
     @include breakpoint('large'){
         width: rem(45);
@@ -47,6 +48,7 @@
         .amount{
             opacity: 1;
         }
+        opacity: 70%;
     }
 }
 
