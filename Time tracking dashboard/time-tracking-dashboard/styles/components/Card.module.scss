@@ -1,0 +1,95 @@
+@use '../util/' as *;
+.outer{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+
+    height: rem(160);
+    width: rem(327);
+
+    padding: 0;
+    border-radius: rem(15);
+
+    @include breakpoint('large'){
+        height: rem(244);
+        width: rem(255);
+    }
+
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        .inner{
+            transition: all .3s ease-in-out;
+            background-color: hsl(236, 43%, 33%);
+        }
+    }
+}
+
+.logo{
+    position: absolute;
+    top: rem(-11);
+    right: rem(13);
+}
+
+.inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 10;
+    height: rem(123);
+    width: 100%;
+
+    padding: rem(24);
+    background-color: var(--very-dark-blue);
+
+    border-radius: rem(15);
+
+    @include breakpoint('large'){
+        height: rem(199);
+    }
+
+    .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        p{
+            font-weight: 500;
+        }
+        img{
+            &:hover{
+                filter: brightness(1000%);
+            }
+        }
+    }
+
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint('large'){
+            flex-direction: column;
+            justify-content: none;
+            align-items: flex-start;
+        }
+
+        .hours{
+            // font-size: rem(28);
+            font-weight: 300;
+
+            @include breakpoint('large'){
+                font-size: rem(60);
+            }
+
+        }
+
+        .timeframe{
+            font-size: rem(14);
+            font-weight: 300;
+            color: var(--pale-blue);
+        }
+    }
+
+}
