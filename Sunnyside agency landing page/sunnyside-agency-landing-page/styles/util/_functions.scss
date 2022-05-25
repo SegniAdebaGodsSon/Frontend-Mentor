@@ -1,0 +1,19 @@
+// Source: https://css-tricks.com/snippets/sass/px-to-em-functions/
+
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Use case: convert from px to rem
+/*
+    h1{
+        font-size: rem(30);
+    }
+
+    result: 
+    h1{
+        font-size: 1.875rem;
+    }
+*/

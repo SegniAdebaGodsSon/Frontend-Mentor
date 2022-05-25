@@ -1,0 +1,77 @@
+@use '../util/' as *;
+
+.nav_container{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(32) rem(24);
+
+    .logo{
+        font-family: var(--barlow);
+        font-weight: 600;
+        font-size: rem(24);
+        color: white;
+        @include breakpoint('small'){
+            font-size: rem(35);
+        }
+    }
+
+    .links_menu{
+        display: flex;
+        align-items: center;
+
+        
+
+        .hamburger_menu{
+            cursor: pointer;
+            @include breakpoint('small'){
+                display: none;
+            }
+        }
+
+        .links{
+            display: none;
+            flex-flow: row wrap;    
+            gap: rem(5) rem(54);
+            a{
+                color: white;
+                font-size: rem(16);
+                font-family: var(--barlow);
+                transition: all .2s ease-in-out;
+
+                &:hover{
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            .contact_link{
+                font-family: var(--fraunces);
+                padding: rem(15) rem(25);
+                border-radius: rem(30);
+                color: black;
+                background-color: white;
+                transition: all .2s ease-in-out;
+
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.3);
+                    color: white;
+                }
+            }
+
+
+
+            @include breakpoint('small'){
+                display: flex;
+            }
+
+        }
+    }
+
+    .dropdown{
+        position: absolute;
+        top: rem(100);
+        right: rem(24);
+    }
+}
+

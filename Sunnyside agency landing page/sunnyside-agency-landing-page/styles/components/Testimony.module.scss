@@ -1,0 +1,40 @@
+@use '../util/' as *;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(30);
+    text-align: center;
+    font-family: var(--barlow);
+    font-size: rem(14);
+    line-height: rem(24);
+
+    .img{
+        height: rem(73);
+        width: rem(73);
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+
+    }
+    .testimony{
+        color: var(--very-dark-grayish-blue);
+        font-size: rem(18);
+        max-width: rem(335);
+    }
+
+    .info{
+
+        h4{
+            font-family: var(--fraunces);
+            margin-bottom: rem(5);
+            font-weight: 900;
+        }
+
+        p{
+            font-size: rem(14);
+            color: var(--grayish-blue);
+        }
+    }
+}
