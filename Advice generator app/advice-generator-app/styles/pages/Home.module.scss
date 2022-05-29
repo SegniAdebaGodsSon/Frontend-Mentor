@@ -1,0 +1,20 @@
+@use '../util/' as *;
+
+
+.main{
+    height: 100vh;
+    padding: 0 rem(15);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.footer{
+    text-align: center;
+    a{
+        color: var(--neon-green);
+    }
+}
