@@ -34,10 +34,10 @@ const Card: React.FC = () => {
 
     return <>
         <div className={styles.container}>
-            <p className={styles.info}>{title.current}</p>
-            <p className={styles.advice}>
+            <h6 className={styles.info}>{title.current}</h6>
+            <h1 className={styles.advice}>
                 &quot;{content.current}&quot;
-            </p>
+            </h1>
 
 
             <div className={styles.divider}>
@@ -48,7 +48,8 @@ const Card: React.FC = () => {
                     alt='divider' />
             </div>
 
-            <div
+            <button
+                aria-label='Advice Generator Button'
                 onClick={() => {
                     if (!loading) {
                         setReRun(prev => !prev)
@@ -66,7 +67,7 @@ const Card: React.FC = () => {
                     alt='dice'
                 >
                 </img>
-            </div>
+            </button>
         </div>
     </>
 }

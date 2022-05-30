@@ -30,3 +30,7 @@ a {
     all: unset;
     cursor: pointer;
 }
+
+button, button:active, button:focus{
+    all: unset
+}

@@ -37,15 +37,18 @@
         }
     }
 
-    
+    .divider{
+        margin-bottom: rem(10);
+    }
 
     .dice{
+
         position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: rem(60);
-        height: rem(60);
+        width: rem(63);
+        height: rem(63);
         border-radius: 50%;
         background-color: var(--neon-green);
         bottom: rem(-30);
