@@ -31,9 +31,6 @@ const Card: React.FC = () => {
     }
 
 
-    console.log([styles.dice, loading ? styles.dice_inactive : styles.dice_active].join(" "))
-
-
     return <>
         <div className={styles.container}>
             <h6 className={styles.info}>{title.current}</h6>
@@ -52,12 +49,12 @@ const Card: React.FC = () => {
 
             <button
                 aria-label='Advice Generator Button'
+                disabled={loading}
                 onClick={() => {
-                    if (!loading) {
+                    if (!loading) {  // not necessary 
                         setReRun(prev => !prev)
                     }
                 }}
-
 
                 className={[styles.dice, loading ? styles.dice_inactive : styles.dice_active].join(" ")}>
                 <img
