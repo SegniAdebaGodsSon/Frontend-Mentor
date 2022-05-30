@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Advice%20generator%20app/advice-generator-app)
-- Live Site URL: [netlify](https://startling-otter-11ff92.netlify.app/)
+- Live Site URL: [netlify](https://aesthetic-custard-8c902b.netlify.app/)
 
 ## My process
 
