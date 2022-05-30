@@ -25,7 +25,7 @@ const Card: React.FC = () => {
         }
 
         if (data) {
-            title.current = 'Advice #' + data.slip.id;
+            title.current = 'ADVICE #' + data.slip.id;
             content.current = data.slip.advice;
         }
     }
