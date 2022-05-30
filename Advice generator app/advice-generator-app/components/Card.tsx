@@ -31,6 +31,8 @@ const Card: React.FC = () => {
     }
 
 
+    console.log([styles.dice, loading ? styles.dice_inactive : styles.dice_active].join(" "))
+
 
     return <>
         <div className={styles.container}>
@@ -56,10 +58,8 @@ const Card: React.FC = () => {
                     }
                 }}
 
-                style={{
-                    backgroundColor: loading ? 'white' : 'hsl(150, 100%, 66%)'
-                }}
-                className={styles.dice}>
+
+                className={[styles.dice, loading ? styles.dice_inactive : styles.dice_active].join(" ")}>
                 <img
                     src='/images/icon-dice.svg'
                     height={24}

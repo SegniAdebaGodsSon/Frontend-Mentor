@@ -50,15 +50,25 @@
         width: rem(63);
         height: rem(63);
         border-radius: 50%;
-        background-color: var(--neon-green);
         bottom: rem(-30);
         transition: all .3s ease-in-out;
 
-        @include breakpoint('small'){
-            &:hover{
-                cursor: pointer;
-                box-shadow: rem(0) rem(0) rem(30) rem(5) hsla(150, 100%, 66%, 0.7);
-            }
+        
+    }
+
+    .dice_active{
+        background-color: var(--neon-green);
+
+        &:hover{
+            cursor: pointer;
+            box-shadow: rem(0) rem(0) rem(30) rem(5) hsla(150, 100%, 66%, 0.7);
+        }
+    }
+
+    .dice_inactive{
+        background-color: white;
+        &:hover{
+            cursor: not-allowed;
         }
     }
 
