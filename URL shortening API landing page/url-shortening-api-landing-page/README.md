@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [github]()
-- Live Site URL: [netlify]()
+- Solution URL: [github](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/URL%20shortening%20API%20landing%20page/url-shortening-api-landing-page)
+- Live Site URL: [netlify](https://creative-sable-0398da.netlify.app/)
 
 ## My process
 
