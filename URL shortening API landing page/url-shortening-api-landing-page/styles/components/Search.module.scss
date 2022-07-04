@@ -1,0 +1,102 @@
+@use '../util/'as *;
+
+.search_box {
+    height: rem(160);
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    background-color: var(--dark-violet);
+    background-image: url('/images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    padding: 0 rem(24);
+    border-radius: rem(10);
+
+    @include breakpoint('small') {
+        flex-direction: row;
+        align-items: center;
+        height: rem(168);
+        gap: rem(22);
+
+        padding: 0 rem(65);
+
+        background-image: url('/images/bg-shorten-desktop.svg');
+        background-size: cover;
+    }
+
+
+
+    .input {
+
+        width: 100%;
+
+        span {
+            color: var(--red);
+            font-style: italic;
+        }
+
+        input {
+            padding: rem(17);
+            height: rem(48);
+            width: 100%;
+            border: unset;
+            border-radius: rem(7);
+            font-size: rem(18);
+
+
+            &:focus {
+                outline: solid;
+                outline-color: var(--cyan);
+                outline-width: rem(3);
+            }
+
+            &::placeholder {
+                color: var(--grayish-violet);
+                font-size: rem(18);
+
+            }
+
+
+            @include breakpoint('small') {
+                height: rem(64);
+                padding: rem(33);
+                border-radius: rem(10);
+            }
+
+        }
+    }
+
+
+
+    button {
+        border-radius: rem(7);
+        height: rem(48);
+        width: 100%;
+        box-shadow: none;
+        border: none;
+        color: white;
+        background-color: var(--cyan);
+        transition: all .3s ease;
+        font-size: rem(18);
+        font-weight: bold;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(.95);
+        }
+
+        &:hover {
+            background-color: hsl(180, 64%, 70%) !important;
+        }
+
+        @include breakpoint('small') {
+            border-radius: rem(10);
+            width: rem(200);
+            height: rem(64);
+        }
+    }
+}

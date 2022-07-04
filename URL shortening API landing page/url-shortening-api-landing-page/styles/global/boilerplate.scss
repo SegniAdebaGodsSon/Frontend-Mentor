@@ -1,0 +1,37 @@
+@use '../util/'as *;
+
+html {
+    scroll-behavior: smooth;
+    font-size: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background-color: var(--cream);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(--poppins);
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-size: rem(18);
+    overflow: hidden;
+    max-width: rem(1800);
+}
+
+ul {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+a {
+    all: unset;
+    cursor: pointer;
+}

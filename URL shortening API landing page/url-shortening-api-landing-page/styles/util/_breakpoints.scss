@@ -1,0 +1,22 @@
+@use '../util/functions'as *;
+
+// 375px - 1440px
+$breakpoints-up: ('small': rem(850),
+    'large': rem(1280));
+
+
+@mixin breakpoint($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content
+    }
+}
+
+;
+
+@mixin breakpointCustom($size) {
+    @media (min-width: $size) {
+        @content
+    }
+}
+
+;

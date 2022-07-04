@@ -1,0 +1,20 @@
+@use 'global'as *;
+@use 'util'as *;
+
+
+
+// body {
+//     padding: rem(40) rem(24) rem(55);
+
+//     @include breakpoint('small') {
+//         padding: rem(48) rem(165) rem(77);
+//     }
+// }
+
+.container {
+    padding: 0 rem(24);
+
+    @include breakpoint('small') {
+        padding: 0 rem(165);
+    }
+}
