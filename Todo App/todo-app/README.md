@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Todo%20App/todo-app)
--   Live Site URL: [Add live site URL here](https://heroic-concha-5e6b06.netlify.app/)
+-   Solution URL: [Github](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Todo%20App/todo-app)
+-   Live Site URL: [Netlify](https://heroic-concha-5e6b06.netlify.app/)
 
 ## My process
 

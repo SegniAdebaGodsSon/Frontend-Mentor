@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Frontend Mentor | Product preview card component</title>
+    <link rel="stylesheet" href="./out/style.css" />
+    <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="text-sm bg-primary-cream">
+    <main class="h-screen flex items-center justify-center p-3">
+
+      <div
+        class="max-w-[343px] rounded-lg overflow-hidden flex flex-col sm:flex-row sm:max-w-none"
+      >
+
+        <div class="sm:w-[300px]">  <!-- Image -->
+          <img
+            class="h-full sm:hidden"
+            src="./images/image-product-mobile.jpg"
+            alt="product image"
+          /> 
+
+          <img
+            class="h-full hidden sm:block"
+            src="./images/image-product-desktop.jpg"
+            alt="product image"
+          />
+        </div>
+
+        
+        <div class="bg-neutral-white px-6 pt-7 pb-6 sm:max-w-[300px] sm:p-8">  <!-- Description -->
+          
+          <h3
+            class="font-montserrat text-neutral-dark-grayish-blue tracking-[5px] text-xs mb-4"
+          >
+            PERFUME
+          </h3>
+          <h1
+            class="font-fraunces font-bold text-3xl sm:text-4xl text-neutral-very-dark-blue mb-2 sm:mb-7 sm:leading-9"
+          >
+            Gabrielle Essence Eau De Parfum
+          </h1>
+          <p class="text-neutral-dark-grayish-blue mb-7 font-medium leading-6">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="flex items-center gap-5 mb-4 sm:mb-6">
+            <p class="text-primary-dark-cyan font-bold font-fraunces text-3xl">
+              $149.99
+            </p>
+            <p class="text-neutral-dark-grayish-blue line-through font-semibold">$169.99</p>
+          </div>
+          <button
+            class="w-full rounded-md text-white h-12 bg-primary-dark-cyan flex items-center justify-center gap-2 hover:bg-primary-very-dark-cyan transition-all ease-in 0.07s"
+          >
+            <img src="./images/icon-cart.svg" alt="cart icon" />
+            Add to Cart
+          </button>
+        </div>
+
+      </div>
+
+
+    </main>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
