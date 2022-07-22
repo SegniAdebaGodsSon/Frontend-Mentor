@@ -37,16 +37,14 @@ const Todo: React.FC<Props> = ({ task, completed, id, setTodos }) => {
 
     return (
         <div
-            draggable
             className='group flex flex-wrap items-center gap-4 bg-white py-[14px] px-5 dark:bg-darkTheme-very-dark-desaturated-blue'
         >
             <Check onClick={handleComplete} checked={completed} />
             <p
-                className={`.2s cursor-pointer overflow-hidden text-xs transition ease-in sm:text-lg ${
-                    completed
+                className={`.2s cursor-pointer overflow-hidden text-xs transition ease-in sm:text-lg ${completed
                         ? 'text-lightTheme-light-grayish-blue line-through dark:text-darkTheme-dark-grayish-blue'
                         : 'text-lightTheme-very-dark-grayish-blue dark:text-darkTheme-light-grayish-blue'
-                } `}
+                    } `}
             >
                 {task}
             </p>
