@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import AddTodo from '../components/AddTodo';
 import TitleRow from '../components/TitleRow';
 import TodosContainer from '../components/TodosContainer';
@@ -8,10 +8,28 @@ import { TodoContext } from '../context/TodoContext';
 import TodoType from '../types/Todo';
 
 const Home: NextPage = () => {
+    const renders = useRef<number>(0);
+
+    const readFromLocalStorage = () => {
+        if (localStorage && localStorage.getItem('todos')) {
+            const localTodos: TodoType[] = JSON.parse(localStorage.getItem('todos')!);
+            return localTodos;
+        }
+        return [];
+    }
+
     const [todos, setTodos] = useState<TodoType[]>([]);
     const [filter, setFilter] = useState<'all' | 'completed' | 'active'>('all');
 
-    // useEffect(() => { console.log(todos) }, [todos]);
+    useEffect(() => {
+        renders.current += 1;
+        if (renders.current == 1) setTodos(readFromLocalStorage());
+    }, []);
+
+    useEffect(() => {
+        if (renders.current > 1) localStorage.setItem('todos', JSON.stringify(todos));
+    }, [todos]);
+
 
     return (
         <TodoContext.Provider value={{ todos, setTodos, filter, setFilter }}>
