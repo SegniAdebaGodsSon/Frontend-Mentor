@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Github](https://github.com/SegniAdebaGodsSon/Frontend-Mentor/tree/master/Todo%20App/todo-app)
--   Live Site URL: [Netlify](https://heroic-concha-5e6b06.netlify.app/)
+-   Live Site URL: [Netlify](https://symphonious-moxie-32fd81.netlify.app/)
 
 ## My process
 
