@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme');
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
     darkMode: 'class',
     content: [
@@ -18,22 +18,20 @@ module.exports = {
                     '2xl': '6rem',
                 },
             },
-            colors:{
+            colors: {
                 neutral: {
                     'dark-blue': 'hsl(209, 23%, 22%)',
                     'very-dark-blue-bg': 'hsl(207, 26%, 17%)',
                     'very-dark-blue-text': 'hsl(200, 15%, 8%)',
                     'dark-gray': 'hsl(0, 0%, 52%)',
                     'very-light-gray': 'hsl(0, 0%, 98%)',
-                    'white': 'hsl(0, 0%, 100%)'
-                }
+                    white: 'hsl(0, 0%, 100%)',
+                },
             },
             fontFamily: {
-                'nunita-sans': ['Nunito Sans', ...defaultTheme.fontFamily.sans]
-            }
+                'nunita-sans': ['Nunito Sans', ...defaultTheme.fontFamily.sans],
+            },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms'),
-    ],
+    plugins: [require('@tailwindcss/forms')],
 }

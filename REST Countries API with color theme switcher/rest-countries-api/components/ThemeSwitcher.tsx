@@ -1,11 +1,9 @@
 import React from 'react'
 import { useTheme } from 'next-themes'
 
-interface Props {
+interface Props {}
 
-}
-
-const ThemeSwitcher: React.FC<Props> = ({ }) => {
+const ThemeSwitcher: React.FC<Props> = ({}) => {
     const [mounted, setMounted] = React.useState(false)
     const { theme, setTheme } = useTheme()
 
@@ -13,12 +11,16 @@ const ThemeSwitcher: React.FC<Props> = ({ }) => {
     React.useEffect(() => setMounted(true), [])
 
     const changeTheme = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        setTheme(theme === 'light' ? 'dark' : 'light')
     }
-    if (!mounted) return null;
+    if (!mounted) return null
 
-    return <div>
-        <button onClick={changeTheme}>{theme === 'light' ? '🌛' : '🌞'}</button>
-    </div>
+    return (
+        <div>
+            <button onClick={changeTheme}>
+                {theme === 'light' ? '🌛' : '🌞'}
+            </button>
+        </div>
+    )
 }
-export default ThemeSwitcher;
+export default ThemeSwitcher

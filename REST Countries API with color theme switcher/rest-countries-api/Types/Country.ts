@@ -1,3 +1,1 @@
-export default interface Country{
-    
-}
+export default interface Country {}

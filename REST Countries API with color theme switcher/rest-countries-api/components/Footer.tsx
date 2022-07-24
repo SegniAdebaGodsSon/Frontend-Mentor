@@ -1,12 +1,8 @@
 import React from 'react'
 
-interface Props {
+interface Props {}
 
+const Footer: React.FC<Props> = ({}) => {
+    return <footer></footer>
 }
-
-const Footer: React.FC<Props> = ({ }) => {
-    return <footer>
-
-    </footer>
-}
-export default Footer;
+export default Footer

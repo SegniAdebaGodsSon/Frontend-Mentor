@@ -5,12 +5,9 @@ import RegionDropdown from '../components/RegionDropdown'
 import SearchBar from '../components/SearchBar'
 import Region from '../Types/Region'
 
-
 const Home: NextPage = () => {
-
-    const [nameFilter, setNameFilter] = useState('');
-    const [regionFilter, setRegionFilter] = useState<Region>('');
-
+    const [nameFilter, setNameFilter] = useState('')
+    const [regionFilter, setRegionFilter] = useState<Region>('')
 
     return (
         <>
@@ -19,8 +16,8 @@ const Home: NextPage = () => {
             </Head>
 
             <main className="py-[30px] container">
-                <form onSubmit={e => e.preventDefault()}>
-                    <div className='flex flex-wrap justify-between gap-y-3'>
+                <form onSubmit={(e) => e.preventDefault()}>
+                    <div className="flex flex-wrap justify-between gap-y-3">
                         <SearchBar setNameFilter={setNameFilter} />
                         <RegionDropdown setRegionFilter={setRegionFilter} />
                     </div>
@@ -28,7 +25,6 @@ const Home: NextPage = () => {
                     {regionFilter}
                 </form>
             </main>
-
         </>
     )
 }
