@@ -1,14 +1,14 @@
-import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
-import Region from '../Types/Region'
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import Region from '../Types/Region';
 
 interface Props {
-    setRegionFilter: Dispatch<SetStateAction<Region>>
+    setRegionFilter: Dispatch<SetStateAction<Region>>;
 }
 
 const RegionDropdown: React.FC<Props> = ({ setRegionFilter }) => {
     const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-        setRegionFilter(event.target.value as Region)
-    }
+        setRegionFilter(event.target.value as Region);
+    };
 
     return (
         <div>
@@ -28,6 +28,6 @@ const RegionDropdown: React.FC<Props> = ({ setRegionFilter }) => {
                 <option value="Oceania">Oceania</option>
             </select>
         </div>
-    )
-}
-export default RegionDropdown
+    );
+};
+export default RegionDropdown;

@@ -1,15 +1,15 @@
-import React, { ChangeEvent, Dispatch, SetStateAction } from 'react'
-import { AiOutlineSearch } from 'react-icons/ai'
+import React, { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 interface Props {
-    setNameFilter: Dispatch<SetStateAction<string>>
+    setNameFilter: Dispatch<SetStateAction<string>>;
 }
 
 const SearchBar: React.FC<Props> = ({ setNameFilter }) => {
     const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        event.preventDefault()
-        setNameFilter(event.target.value)
-    }
+        event.preventDefault();
+        setNameFilter(event.target.value);
+    };
 
     return (
         <div className="flex max-w-[480px] md:max-w-none md:w-[480px] gap-x-3 px-10 h-[60px] items-center bg-neutral-white dark:bg-neutral-dark-blue shadow-md rounded-md">
@@ -24,6 +24,6 @@ const SearchBar: React.FC<Props> = ({ setNameFilter }) => {
                 placeholder="Search for a country..."
             />
         </div>
-    )
-}
-export default SearchBar
+    );
+};
+export default SearchBar;

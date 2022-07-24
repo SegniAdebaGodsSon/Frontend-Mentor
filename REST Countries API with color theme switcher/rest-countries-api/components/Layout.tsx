@@ -1,9 +1,9 @@
-import React from 'react'
-import Footer from './Footer'
-import Navbar from './Navbar'
+import React from 'react';
+import Footer from './Footer';
+import Navbar from './Navbar';
 
 interface Props {
-    children: React.ReactNode
+    children: React.ReactNode;
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
@@ -13,6 +13,6 @@ const Layout: React.FC<Props> = ({ children }) => {
             {children}
             <Footer />
         </>
-    )
-}
-export default Layout
+    );
+};
+export default Layout;
