@@ -1,26 +1,44 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Context, useState } from 'react';
+import { useState } from 'react';
 import Card from '../components/Card';
 import RegionDropdown from '../components/RegionDropdown';
 import SearchBar from '../components/SearchBar';
 import Country from '../Types/Country';
-import FetchError from '../Types/FetchError';
 import Region from '../Types/Region';
 import { v4 as uuidv4 } from 'uuid';
+import { ApolloError, gql } from '@apollo/client';
+import client from '../apollo-client';
 
+const CountriesQuery = gql`
+query Countries {
+    countries {
+        edges {
+            node {
+                name
+                population
+                flag
+                capital
+                region
+            }
+        }
+    }
+}`;
 
 interface Props {
-    countriesData: Country[],
-    error: FetchError
+    data: Country[],
+    error: string | null
 }
 
-const Home: NextPage<Props> = ({ countriesData, error }) => {
+const Home: NextPage<Props> = ({ data, error }) => {
     const [nameFilter, setNameFilter] = useState('');
     const [regionFilter, setRegionFilter] = useState<Region>('');
-    const [countries, _] = useState<Country[]>(countriesData);
+    const [countries, _] = useState<Country[]>(data);
 
-    if (error) return <div>fetch error bro</div>
+
+    if (error) {
+        return <div className='flex mt-10 justify-center h-screen text-red-600 dark:text-red-600'>{error}</div>
+    }
 
     return (
         <>
@@ -62,23 +80,40 @@ export default Home;
 // 
 
 export async function getStaticProps() {
-    // const res = await fetch('https://restcountries.com/v3.1/all/?fields=name,capital,population,region,flags');
     let countries: Country[] = [];
-    let errorMessage: FetchError | null = null;
+    let errorMessage: string | null = null;
+
+
     try {
-        const res = await fetch('https://restcountries.com/v2/all?fields=name,capital,region,flag,independent,population');
-        const data = await res.json();
-        countries = data;
-    } catch (e) {
-        errorMessage = {
-            message: (e as Error).message,
+        const { data, error } = await client.query({
+            query: CountriesQuery
+        });
+
+        if (data) {
+            data.countries.edges.forEach((edge: any) => {
+                const country: Country = {
+                    name: edge.node.name,
+                    capital: edge.node.capital,
+                    flag: edge.node.flag,
+                    population: edge.node.population,
+                    region: edge.node.region
+                }
+                countries.push(country);
+            })
         }
+
+        if (error) {
+            errorMessage = error.message;
+        }
+
+    } catch (e: unknown) {
+        errorMessage = (e as ApolloError).message;
     }
 
     return {
         props: {
-            countriesData: countries,
+            data: countries,
             error: errorMessage
-        },
+        }
     }
 }
