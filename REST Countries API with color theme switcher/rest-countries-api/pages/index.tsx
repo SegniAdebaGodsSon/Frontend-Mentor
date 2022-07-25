@@ -57,8 +57,17 @@ const Home: NextPage<Props> = ({ data, error }) => {
                 <div className="py-10">
                     {/* Cards */}
                     <div className='flex flex-wrap gap-x-[50px] gap-y-[75px] justify-center items-start'>
-                        {countries.map(country => (
-                            <Card
+                        {countries.map(country => {
+                            const name = country.name.toLowerCase();
+                            if (nameFilter !== '' && !name.includes(nameFilter.toLowerCase())) {
+                                return null;
+                            }
+
+                            if (regionFilter !== '' && regionFilter !== country.region) {
+                                return null;
+                            }
+
+                            return <Card
                                 key={uuidv4()}
                                 name={country.name}
                                 flag={country.flag}
@@ -66,7 +75,8 @@ const Home: NextPage<Props> = ({ data, error }) => {
                                 capital={country.capital}
                                 population={country.population}
                             />
-                        ))
+                        }
+                        )
                         }
                     </div>
                 </div>
