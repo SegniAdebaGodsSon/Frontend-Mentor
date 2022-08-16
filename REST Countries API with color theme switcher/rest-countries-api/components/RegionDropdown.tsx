@@ -16,16 +16,26 @@ const RegionDropdown: React.FC<Props> = ({ setRegionFilter }) => {
                 onChange={(e) => onChangeHandler(e)}
                 name="regions"
                 id="regions"
-                className="form-select border-none w-[200px] md:w-[250px] h-[60px] text-neutral-very-dark-blue dark:text-neutral-white bg-neutral-white dark:bg-neutral-dark-blue rounded-md px-[30px] shadow-md focus:ring-0"
+                className="form-select border-none w-[250px] h-[60px] text-neutral-very-dark-blue dark:text-neutral-white bg-neutral-white dark:bg-neutral-dark-blue rounded-md px-[30px] shadow-md focus:ring-0 font-semibold cursor-pointer"
             >
                 <option value="" hidden>
-                    Region
+                    Filter by Region
                 </option>
-                <option value="Africa">Africa</option>
-                <option value="Americas">Americas</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
+                <option className="font-semibold" value="Africa">
+                    Africa
+                </option>
+                <option className="font-semibold" value="Americas">
+                    Americas
+                </option>
+                <option className="font-semibold" value="Asia">
+                    Asia
+                </option>
+                <option className="font-semibold" value="Europe">
+                    Europe
+                </option>
+                <option className="font-semibold" value="Oceania">
+                    Oceania
+                </option>
             </select>
         </div>
     );

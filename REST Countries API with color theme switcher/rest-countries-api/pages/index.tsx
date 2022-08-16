@@ -11,23 +11,25 @@ import { ApolloError, gql } from '@apollo/client';
 import client from '../apollo-client';
 
 const CountriesQuery = gql`
-query Countries {
-    countries {
-        edges {
-            node {
-                name
-                population
-                flag
-                capital
-                region
+    query Countries {
+        countries {
+            edges {
+                node {
+                    id
+                    name
+                    population
+                    flag
+                    capital
+                    region
+                }
             }
         }
     }
-}`;
+`;
 
 interface Props {
-    data: Country[],
-    error: string | null
+    data: Country[];
+    error: string | null;
 }
 
 const Home: NextPage<Props> = ({ data, error }) => {
@@ -35,9 +37,12 @@ const Home: NextPage<Props> = ({ data, error }) => {
     const [regionFilter, setRegionFilter] = useState<Region>('');
     const [countries, _] = useState<Country[]>(data);
 
-
     if (error) {
-        return <div className='flex mt-10 justify-center h-screen text-red-600 dark:text-red-600'>{error}</div>
+        return (
+            <div className="flex mt-10 justify-center h-screen text-red-600 dark:text-red-600">
+                {error}
+            </div>
+        );
     }
 
     return (
@@ -46,76 +51,84 @@ const Home: NextPage<Props> = ({ data, error }) => {
                 <title>Home</title>
             </Head>
 
-            <main className="py-[30px] container">
+            <div className="">
                 <form onSubmit={(e) => e.preventDefault()}>
-                    <div className="flex flex-wrap justify-between gap-y-3">
-                        <SearchBar setNameFilter={setNameFilter} />
+                    <div className="flex flex-wrap justify-between gap-x-3 gap-y-10">
+                        <div className="flex-grow">
+                            <SearchBar setNameFilter={setNameFilter} />
+                        </div>
                         <RegionDropdown setRegionFilter={setRegionFilter} />
                     </div>
                 </form>
 
                 <div className="py-10">
                     {/* Cards */}
-                    <div className='flex flex-wrap gap-x-[50px] gap-y-[75px] justify-center items-start'>
-                        {countries.map(country => {
+                    <div className="flex flex-wrap gap-x-[50px] gap-y-[75px] justify-center md:justify-start  items-start">
+                        {countries.map((country) => {
                             const name = country.name.toLowerCase();
-                            if (nameFilter !== '' && !name.includes(nameFilter.toLowerCase())) {
+                            if (
+                                nameFilter !== '' &&
+                                !name.includes(nameFilter.toLowerCase())
+                            ) {
                                 return null;
                             }
 
-                            if (regionFilter !== '' && regionFilter !== country.region) {
+                            if (
+                                regionFilter !== '' &&
+                                regionFilter !== country.region
+                            ) {
                                 return null;
                             }
 
-                            return <Card
-                                key={uuidv4()}
-                                name={country.name}
-                                flag={country.flag}
-                                region={country.region}
-                                capital={country.capital}
-                                population={country.population}
-                            />
-                        }
-                        )
-                        }
+                            return (
+                                <Card
+                                    key={uuidv4()}
+                                    id={country.id}
+                                    name={country.name}
+                                    flag={country.flag}
+                                    region={country.region}
+                                    capital={country.capital}
+                                    population={country.population}
+                                />
+                            );
+                        })}
                     </div>
                 </div>
-            </main>
+            </div>
         </>
     );
 };
 
 export default Home;
 
-// 
+//
 
 export async function getStaticProps() {
     let countries: Country[] = [];
     let errorMessage: string | null = null;
 
-
     try {
         const { data, error } = await client.query({
-            query: CountriesQuery
+            query: CountriesQuery,
         });
 
         if (data) {
             data.countries.edges.forEach((edge: any) => {
                 const country: Country = {
+                    id: edge.node.id,
                     name: edge.node.name,
                     capital: edge.node.capital,
                     flag: edge.node.flag,
                     population: edge.node.population,
-                    region: edge.node.region
-                }
+                    region: edge.node.region,
+                };
                 countries.push(country);
-            })
+            });
         }
 
         if (error) {
             errorMessage = error.message;
         }
-
     } catch (e: unknown) {
         errorMessage = (e as ApolloError).message;
     }
@@ -123,7 +136,7 @@ export async function getStaticProps() {
     return {
         props: {
             data: countries,
-            error: errorMessage
-        }
-    }
+            error: errorMessage,
+        },
+    };
 }

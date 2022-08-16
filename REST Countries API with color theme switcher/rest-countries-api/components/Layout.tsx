@@ -10,7 +10,7 @@ const Layout: React.FC<Props> = ({ children }) => {
     return (
         <>
             <Navbar />
-            {children}
+            <main className="py-[30px] pb-60 container">{children}</main>
             <Footer />
         </>
     );
