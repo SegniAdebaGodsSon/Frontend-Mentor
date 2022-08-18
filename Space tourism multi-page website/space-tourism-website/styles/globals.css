@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    h1{
+        @apply font-bellefair 
+        text-[80px] leading-[100px] tracking-[0px] 
+        tablet:text-[150px] tablet:leading-[150px]
+        desktop:text-[150px] desktop:leading-normal;
+    }
+
+    h2{
+        @apply font-bellefair 
+        text-[56px] leading-normal tracking-[0px] 
+        tablet:text-[80px]
+        desktop:text-[100px];
+    }
+
+    h3{
+        @apply font-bellefair 
+        text-[24px] leading-normal tracking-[0px] 
+        tablet:text-[40px] 
+        desktop:text-[56px]
+    }
+
+    h4{
+        @apply font-bellefair 
+        text-[16px] leading-normal tracking-[0px] 
+        tablet:text-[24px]
+        desktop:text-[32px]
+    }
+
+    h5{
+        @apply font-barlow-condensed 
+        text-[16px] leading-normal tracking-[2.7px] 
+        tablet:text-[20px] tablet:tracking-[3.38px] 
+        desktop:text-[28px] desktop:tracking-[4.72px]
+    }
+
+    p{
+        @apply font-barlow 
+        text-[15px] leading-[25px] tracking-[0px] 
+        tablet:text-[16px] tablet:leading-[28px]
+        desktop:text-[18px] desktop:leading-[32px];
+    }
+    
+}
+
+
+@layer components{
+    .sub-heading-1 {
+        @apply font-bellefair 
+        text-[28px] leading-normal tracking-[0px];
+    }
+
+    .sub-heading-2 {
+        @apply font-barlow-condensed
+        text-[14px] leading-normal tracking-[2.36px];
+
+    }
+
+    .nav-text {
+        @apply font-barlow-condensed 
+        text-[16px] leading-normal tracking-[2.7px] 
+        tablet:text-[14px] tablet:tracking-[2.36px] 
+        desktop:text-[16px] desktop:tracking-[2.7px] ;
+    }
+}
+
