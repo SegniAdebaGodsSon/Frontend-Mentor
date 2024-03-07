@@ -26,8 +26,8 @@ module.exports = {
 			bellefair: ['Bellefair', ...defaultTheme.fontFamily.sans],
 		},
         screens: {
-            'tablet': '375px',
-            'desktop': '768px'
+            'tablet': '480px',
+            'desktop': '1200px'
         },
         backgroundImage: {
             'crew-desktop': "url('/assets/crew/background-crew-desktop.jpg')",
@@ -48,19 +48,14 @@ module.exports = {
 
             
         },
-        extend: {
-			// container: {
-            //     center: true,
-            //     padding: {
-            //         DEFAULT: '1rem',
-            //         sm: '2rem',
-            //         lg: '4rem',
-            //         xl: '5rem',
-            //         '2xl': '6rem',
-            //     },
-            // },
-			
-        },
+        // container: {
+        //     center: true,
+        //     padding: {
+        //         DEFAULT: '1rem',
+        //         tablet: '2rem',
+        //         desktop: '4rem'
+        //     },
+        // },
     },
     plugins: [],
 };
