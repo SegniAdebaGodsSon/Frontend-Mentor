@@ -114,7 +114,7 @@
 
 	let formatPrice = (price: number) => `$${price}/${paymentType === 'monthly' ? 'mo' : 'yr'}`;
 
-	let currentStep = $state<1 | 2 | 3 | 4 | 5>(1);
+	let currentStep = $state<1 | 2 | 3 | 4 | 5>(5);
 
 	const emailRexEx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -231,79 +231,97 @@
 		</ul>
 	</div>
 
-	<div class="mx-auto">
+	<div class="mx-auto px-1 md:px-4">
 		<div
-			class="mx-4 bg-neutral-white py-8 px-6 max-w-lg shadow-lg rounded-lg -mt-[73px] md:mt-0 md:flex md:max-w-fit"
+			class=" bg-neutral-white py-8 px-8 md:py-4 md:pl-4 shadow-lg rounded-xl -mt-[73px] md:mt-0 md:flex md:max-w-[940px] md:min-h-[600px]"
 		>
-			<div class="hidden md:flex bg-sidebarDesktop h-auto w-[274px] bg-cover md:gap-8">
-				<ul class="flex flex-col gap-4 items-start">
-					<li>
+			<div
+				class="hidden md:flex bg-sidebarDesktop min-w-[274px] bg-cover md:gap-8 px-8 py-10 bg-bottom rounded-xl"
+			>
+				<ul class="flex flex-col gap-4 md:gap-7 items-start">
+					<li class="flex items-center gap-4">
 						<div
 							class="{currentStep == 1
 								? 'bg-primary-lightBlue text-primary-marineBlue border-none'
-								: ''} font-bold text-center w-9 h-9 p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
+								: ''} font-bold text-center w-9 h-9 md:w-[33px] md:h-[33px] p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
 						>
 							<span class="h-full flex items-center">1</span>
 						</div>
-						<div>
-							<p>STEP 1</p>
-							<h2>YOUR INFO</h2>
+						<div class="">
+							<p class="text-primary-pastelBlue text-xs">STEP 1</p>
+							<h2 class="font-medium text-neutral-white text-sm tracking-wider">
+								YOUR INFO
+							</h2>
 						</div>
 					</li>
-					<li>
+					<li class="flex items-center gap-4">
 						<div
 							class="{currentStep == 2
 								? 'bg-primary-lightBlue text-primary-marineBlue border-none'
-								: ''} font-bold text-center w-9 h-9 p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
+								: ''} font-bold text-center w-9 h-9 md:w-[33px] md:h-[33px] p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
 						>
 							<span class="h-full flex items-center">2</span>
 						</div>
 
-						<div>
-							<p>STEP 2</p>
-							<h2>SELECT PLAN</h2>
+						<div class="">
+							<p class="text-primary-pastelBlue text-xs">STEP 2</p>
+							<h2 class="font-medium text-neutral-white text-sm tracking-wider">
+								SELECT PLAN
+							</h2>
 						</div>
 					</li>
-					<li>
+
+					<li class="flex items-center gap-4">
 						<div
 							class="{currentStep == 3
 								? 'bg-primary-lightBlue text-primary-marineBlue border-none'
-								: ''} font-bold text-center w-9 h-9 p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
+								: ''} font-bold text-center w-9 h-9 md:w-[33px] md:h-[33px] p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
 						>
 							<span class="h-full flex items-center">3</span>
 						</div>
-						<div>
-							<p>STEP 3</p>
-							<h2>ADD-ONS</h2>
+						<div class="text-sm">
+							<p class="text-primary-pastelBlue text-xs">STEP 3</p>
+							<h2 class="font-medium text-neutral-white text-sm tracking-wider">
+								ADD-ONS
+							</h2>
 						</div>
 					</li>
-					<li>
+					<li class="flex items-center gap-4">
 						<div
 							class="{currentStep >= 4
 								? 'bg-primary-lightBlue text-primary-marineBlue border-none'
-								: ''} font-bold text-center w-9 h-9 p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
+								: ''} font-bold text-center w-9 h-9 md:w-[33px] md:h-[33px] p-2 border-[1px] border-neutral-white text-neutral-white rounded-full flex justify-center"
 						>
 							<span class="h-full flex items-center">4</span>
 						</div>
-						<div>
-							<p>STEP 4</p>
-							<h2>SUMMARY</h2>
+						<div class="text-sm">
+							<p class="text-primary-pastelBlue text-xs">STEP 4</p>
+							<h2 class="font-medium text-neutral-white text-sm tracking-wider">
+								SUMMARY
+							</h2>
 						</div>
 					</li>
 				</ul>
 			</div>
 
-			<div>
-				{#if currentStep === 1}
-					{@render PersonalInfo()}
-				{:else if currentStep === 2}
-					{@render Plan(planData)}
-				{:else if currentStep === 3}
-					{@render AddOns(addonData)}
-				{:else if currentStep === 4}
-					{@render Final()}
-				{:else}
-					{@render ThankYou()}
+			<div
+				class="md:pl-[100px] md:pr-[60px] md:mt-[45px] md:mb-4 md:flex md:flex-col"
+			>
+					{#if currentStep === 1}
+						{@render PersonalInfo()}
+					{:else if currentStep === 2}
+						{@render Plan(planData)}
+					{:else if currentStep === 3}
+						{@render AddOns(addonData)}
+					{:else if currentStep === 4}
+						{@render Final()}
+					{:else}
+						{@render ThankYou()}
+					{/if}
+				{#if currentStep < 5}
+					<div class="hidden md:block mt-auto">
+						{@render BottomNav()}
+					</div>
 				{/if}
 			</div>
 		</div>
@@ -317,23 +335,25 @@
 </div>
 
 {#snippet PersonalInfo()}
-	<h1 class="text-primary-marineBlue font-bold text-2xl mb-2">Personal info</h1>
-	<p class="font-normal text-neutral-coolGray mb-5">
+	<h1 class="text-primary-marineBlue font-bold text-2xl mb-2 md:text-3xl">Personal info</h1>
+	<p class="font-normal text-neutral-coolGray mb-5 md:mb-8">
 		Please provide your name, email address, and phone number.
 	</p>
 
-	<div class="flex flex-col gap-4">
+	<div class="flex flex-col gap-4 md:gap-5">
 		<div>
-			<div class="flex justify-between">
-				<label class="text-primary-marineBlue" for="name">Name</label>
+			<div class="flex justify-between md:mb-1">
+				<label class="text-primary-marineBlue tracking-tighter text-sm" for="name"
+					>Name</label
+				>
 				{#if personalInfoForm.name.err != ''}
-					<p class="text-primary-strawberryRed font-medium">
+					<p class="text-primary-strawberryRed font-medium md:text-sm">
 						{personalInfoForm.name.err}
 					</p>
 				{/if}
 			</div>
 			<input
-				class="w-full font-medium border-[1px] rounded-md border-neutral-lightGray px-4 py-2 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
+				class="hover:border-primary-purplishBlue hover:cursor-pointer w-full font-medium border-[1px] rounded-lg border-neutral-lightGray px-4 py-2 md:py-3 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
 				type="text"
 				name="name"
 				id="name"
@@ -343,16 +363,18 @@
 		</div>
 
 		<div>
-			<div class="flex justify-between">
-				<label class="text-primary-marineBlue" for="email">Email Address</label>
+			<div class="flex justify-between md:mb-1">
+				<label class="text-primary-marineBlue tracking-tighter text-sm" for="email"
+					>Email Address</label
+				>
 				{#if personalInfoForm.email.err != ''}
-					<p class="text-primary-strawberryRed font-medium">
+					<p class="text-primary-strawberryRed font-medium md:text-sm">
 						{personalInfoForm.email.err}
 					</p>
 				{/if}
 			</div>
 			<input
-				class="w-full font-medium border-[1px] rounded-md border-neutral-lightGray px-4 py-2 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
+				class="hover:border-primary-purplishBlue hover:cursor-pointer w-full font-medium border-[1px] rounded-lg border-neutral-lightGray px-4 py-2 md:py-3 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
 				type="text"
 				name="email"
 				id="email"
@@ -362,16 +384,18 @@
 		</div>
 
 		<div>
-			<div class="flex justify-between">
-				<label class="text-primary-marineBlue" for="phone">Phone Number</label>
+			<div class="flex justify-between md:mb-1">
+				<label class="text-primary-marineBlue tracking-tighter text-sm" for="phone"
+					>Phone Number</label
+				>
 				{#if personalInfoForm.phone.err != ''}
-					<p class="text-primary-strawberryRed font-medium">
+					<p class="text-primary-strawberryRed font-medium md:text-sm">
 						{personalInfoForm.phone.err}
 					</p>
 				{/if}
 			</div>
 			<input
-				class="w-full font-medium border-[1px] rounded-md border-neutral-lightGray px-4 py-2 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
+				class="hover:border-primary-purplishBlue hover:cursor-pointer w-full font-medium border-[1px] rounded-lg border-neutral-lightGray px-4 py-2 md:py-3 focus:outline-none focus:border-primary-marineBlue focus:text-primary-marineBlue"
 				type="text"
 				name="phone"
 				id="phone"
@@ -390,7 +414,7 @@
 	<div class="flex flex-col gap-3 mb-6">
 		{#each plans as plan, ind}
 			<button
-				class="flex items-start border-[1px] border-neutral-lightGray rounded-md gap-2 p-3
+				class="md:hover:border-primary-purplishBlue md:cursor-pointer flex items-start border-[1px] border-neutral-lightGray rounded-md gap-2 p-3
 			{selectedPlan == ind ? 'border-primary-purplishBlue bg-neutral-alabaster' : ''}"
 				onclick={() => (selectedPlan = ind)}
 			>
@@ -447,7 +471,7 @@
 			<button onclick={(e) => handleAddOnClick(e, ind)}>
 				<label
 					for="${addOn.title}"
-					class="flex items-center gap-4 border-[1px] p-4 rounded-md {selectedAddOns.includes(
+					class="flex items-center gap-4 border-[1px] p-4 rounded-md md:hover:border-primary-purplishBlue md:hover:cursor-pointer {selectedAddOns.includes(
 						ind
 					)
 						? 'bg-neutral-alabaster border-primary-purplishBlue'
@@ -520,9 +544,9 @@
 {/snippet}
 
 {#snippet ThankYou()}
-	<div class="flex flex-col items-center py-12">
-		<img src="/images/icon-thank-you.svg" alt="thank you" class="h-14 w-14 mb-6" />
-		<h1 class="font-bold text-primary-marineBlue text-2xl mb-4">Thank you!</h1>
+	<div class="flex flex-col items-center py-12 md:mt-[72px]">
+		<img src="/images/icon-thank-you.svg" alt="thank you" class="h-14 w-14 md:h-20 md:w-20 mb-6 md:mb-9" />
+		<h1 class="font-bold text-primary-marineBlue text-2xl mb-4 md:text-[32px]">Thank you!</h1>
 		<p class="text-neutral-coolGray text-center">
 			Thanks for confirming your subscription! We hope you have fun using our platform. If you
 			ever need support, please feel free to email us at support@loremgaming.com.
@@ -531,7 +555,9 @@
 {/snippet}
 
 {#snippet BottomNav()}
-	<div class="flex items-center w-full h-20 px-4 bg-neutral-white justify-between">
+	<div
+		class="flex items-center w-full h-20 md:h-fit px-4 bg-neutral-white justify-between md:px-0"
+	>
 		<div>
 			{#if currentStep > 1}
 				<button
@@ -543,12 +569,12 @@
 		<div>
 			{#if currentStep < 4}
 				<button
-					class="bg-primary-marineBlue text-neutral-magnolia h-10 px-4 rounded-md hover:bg-primary-purplishBlue"
+					class="bg-primary-marineBlue text-neutral-magnolia h-10 md:h-12 px-4 md:px-6 rounded-lg hover:bg-primary-purplishBlue"
 					onclick={handleNextStep}>Next Step</button
 				>
 			{:else}
 				<button
-					class="bg-primary-purplishBlue text-neutral-magnolia h-10 px-4 rounded-md hover:bg-primary-pastelBlue"
+					class="bg-primary-purplishBlue text-neutral-magnolia h-10 md:h-12 px-4 md:px-6 rounded-lg hover:bg-primary-pastelBlue"
 					onclick={handleNextStep}>Confirm</button
 				>
 			{/if}
